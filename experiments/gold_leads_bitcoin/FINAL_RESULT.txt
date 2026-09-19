@@ -1,0 +1,2 @@
+untouched 2023-09-22 to 2026-09-11 weeks 156
+baseline acc 0.532 | rule acc 0.500 | gap -0.032 -> REJECTED (practical)

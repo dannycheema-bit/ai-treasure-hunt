@@ -1,0 +1,2 @@
+explore   weeks 364 | baseline 0.533 | BTC->GLD rule 0.489 | gap -0.044
+untouched weeks 156 | baseline 0.596 | BTC->GLD rule 0.442 | gap -0.154
