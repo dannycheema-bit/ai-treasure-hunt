@@ -1,0 +1,47 @@
+symbol,name,vertical,type,price_source_id
+TAO,Bittensor,AI Agents & Machine Economy,token,bittensor
+VIRTUAL,Virtuals Protocol,AI Agents & Machine Economy,token,virtual-protocol
+VVV,Venice Token,AI Agents & Machine Economy,token,venice-token
+AKT,Akash,"DePIN, Storage & Physical Networks",token,akash-network
+AR,Arweave,"DePIN, Storage & Physical Networks",token,arweave
+FIL,Filecoin,"DePIN, Storage & Physical Networks",token,filecoin
+GEOD,GEODNET,"DePIN, Storage & Physical Networks",token,geodnet
+GRASS,Grass,"DePIN, Storage & Physical Networks",token,grass
+HNT,Helium,"DePIN, Storage & Physical Networks",token,helium
+IOTX,IoTeX,"DePIN, Storage & Physical Networks",token,iotex
+RENDER,Render,"DePIN, Storage & Physical Networks",token,render-token
+BTC,Bitcoin,Digital Monetary Assets,token,bitcoin
+XMR,Monero,Digital Monetary Assets,token,monero
+ZEC,Zcash,Digital Monetary Assets,token,zcash
+COIN,Coinbase,"Exchange, Brokerage & Market Structure",stock,COIN
+HOOD,Robinhood,"Exchange, Brokerage & Market Structure",stock,HOOD
+HYPE,Hyperliquid,"Exchange, Brokerage & Market Structure",token,hyperliquid
+JUP,Jupiter,"Exchange, Brokerage & Market Structure",token,jupiter-exchange-solana
+RUNE,THORChain,"Exchange, Brokerage & Market Structure",token,thorchain
+UNI,Uniswap,"Exchange, Brokerage & Market Structure",token,uniswap
+AAVE,Aave,"Lending, Credit & Rates",token,aave
+MORPHO,Morpho,"Lending, Credit & Rates",token,morpho
+PENDLE,Pendle,"Lending, Credit & Rates",token,pendle
+SYRUP,Maple Finance,"Lending, Credit & Rates",token,syrup
+GRT,The Graph,"Oracle, Data & Interop Middleware",token,the-graph
+LINK,Chainlink,"Oracle, Data & Interop Middleware",token,chainlink
+PYTH,Pyth Network,"Oracle, Data & Interop Middleware",token,pyth-network
+ZRO,LayerZero,"Oracle, Data & Interop Middleware",token,layerzero
+CC,Canton,Settlement & Smart Contract Rails,token,canton-network
+ETH,Ethereum,Settlement & Smart Contract Rails,token,ethereum
+NEAR,NEAR Protocol,Settlement & Smart Contract Rails,token,near
+SOL,Solana,Settlement & Smart Contract Rails,token,solana
+SUI,Sui,Settlement & Smart Contract Rails,token,sui
+TRX,TRON,Settlement & Smart Contract Rails,token,tron
+XLM,Stellar,Settlement & Smart Contract Rails,token,stellar
+XRP,XRP,Settlement & Smart Contract Rails,token,ripple
+CRCL,Circle,Stablecoin & Synthetic-Dollar Systems,stock,CRCL
+ENA,Ethena,Stablecoin & Synthetic-Dollar Systems,token,ethena
+SKY,Sky / Maker,Stablecoin & Synthetic-Dollar Systems,token,sky
+ETHFI,Ether.fi,"Staking, Restaking & Validation",token,ether-fi
+JTO,Jito,"Staking, Restaking & Validation",token,jito-governance-token
+LDO,Lido DAO,"Staking, Restaking & Validation",token,lido-dao
+CFG,Centrifuge,Tokenization & RWA Rails,token,centrifuge-2
+FIGR,Figure Technology,Tokenization & RWA Rails,stock,FIGR
+HASH,Provenance Blockchain,Tokenization & RWA Rails,token,hash-2
+ONDO,Ondo,Tokenization & RWA Rails,token,ondo-finance

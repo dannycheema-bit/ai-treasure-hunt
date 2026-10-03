@@ -33,6 +33,9 @@ build/
 reference/sectors.csv
 reference/data_corrections.json
 
+# Third-party video transcripts: keep local, do not publish.
+experiments/*/transcript.txt
+
 # Raw market-data snapshots in experiments: keep local, do not publish (see THIRD_PARTY_NOTICES.md).
 experiments/*/*.csv
 !experiments/*/STACK.csv
