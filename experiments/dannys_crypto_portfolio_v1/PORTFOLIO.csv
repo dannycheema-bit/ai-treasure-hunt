@@ -1,0 +1,17 @@
+symbol,name,type,price_source_id,in_visser_46,visser_vertical,weight
+BTC,Bitcoin,token,bitcoin,yes,Digital Monetary Assets,6.25%
+SOL,Solana,token,solana,yes,Settlement & Smart Contract Rails,6.25%
+ETH,Ethereum,token,ethereum,yes,Settlement & Smart Contract Rails,6.25%
+HOOD,Robinhood,stock,HOOD,yes,"Exchange, Brokerage & Market Structure",6.25%
+TAO,Bittensor,token,bittensor,yes,AI Agents & Machine Economy,6.25%
+VVV,Venice Token,token,venice-token,yes,AI Agents & Machine Economy,6.25%
+UNI,Uniswap,token,uniswap,yes,"Exchange, Brokerage & Market Structure",6.25%
+LINK,Chainlink,token,chainlink,yes,"Oracle, Data & Interop Middleware",6.25%
+ZEC,Zcash,token,zcash,yes,Digital Monetary Assets,6.25%
+HYPE,Hyperliquid,token,hyperliquid,yes,"Exchange, Brokerage & Market Structure",6.25%
+COIN,Coinbase,stock,COIN,yes,"Exchange, Brokerage & Market Structure",6.25%
+NEAR,NEAR Protocol,token,near,yes,Settlement & Smart Contract Rails,6.25%
+SUI,Sui,token,sui,yes,Settlement & Smart Contract Rails,6.25%
+FIGR,Figure Technology,stock,FIGR,yes,Tokenization & RWA Rails,6.25%
+QNT,Quant,token,quant-network,no,,6.25%
+XRP,XRP,token,ripple,yes,Settlement & Smart Contract Rails,6.25%
