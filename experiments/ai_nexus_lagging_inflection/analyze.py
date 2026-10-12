@@ -19,7 +19,18 @@ import pandas as pd
 HERE = Path(__file__).parent
 RAW = HERE / "raw"
 WEIGHTS = {"jev_pe": 30, "magnitude": 25, "technical": 20, "commentary": 15, "jev_pg": 10}
-AVAILABLE = ("magnitude", "technical")
+AVAILABLE = ("magnitude", "technical", "commentary")
+FROZEN = HERE / "frozen_consensus_2026-10-12.json"
+
+
+def commentary_scores():
+    """Phase-2 input: commentary_scores.csv (ticker, stage, commentary_score, evidence, sources).
+    Missing names stay PENDING; nothing is filled in."""
+    path = HERE / "commentary_scores.csv"
+    if not path.exists():
+        return {}
+    c = pd.read_csv(path)
+    return {r.ticker: r for r in c.itertuples() if pd.notna(r.commentary_score)}
 
 
 def split(rec, key):
@@ -169,6 +180,7 @@ def frozen_consensus(rec):
 
 def main():
     rows, frozen = [], {}
+    comm = commentary_scores()
     for path in sorted(RAW.glob("*.json")):
         rec = json.loads(path.read_text())
         u = rec["universe"]
@@ -184,7 +196,8 @@ def main():
                                           "from_52w_high", "last_date")},
                **momentum(rec), **reported(rec),
                "jev_pe": "PENDING (Jev not connected)", "jev_pg": "PENDING (Jev not connected)",
-               "commentary_score": "PENDING (phase 2 research)"}
+               "commentary_score": (float(comm[u["Ticker"]].commentary_score) if u["Ticker"] in comm else None),
+               "commentary_stage": (comm[u["Ticker"]].stage if u["Ticker"] in comm else "PENDING (phase 2 research)")}
         avail = [c for c in AVAILABLE if row[f"{c}_score"] is not None]
         row["components_available"] = len(avail)
         pts = sum(WEIGHTS[c] * row[f"{c}_score"] / 100 for c in avail)
@@ -207,9 +220,10 @@ def main():
     df.insert(0, "partial_rank", range(1, len(df) + 1))
 
     stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    (HERE / "frozen_consensus_2026-10-12.json").write_text(json.dumps(
-        {"frozen_utc": stamp, "source": "Yahoo Finance revenue_estimate via yfinance", "data": frozen},
-        default=float, indent=1))
+    if not FROZEN.exists():  # frozen once; never overwritten by later refreshes
+        FROZEN.write_text(json.dumps(
+            {"frozen_utc": stamp, "source": "Yahoo Finance revenue_estimate via yfinance", "data": frozen},
+            default=float, indent=1))
     df.to_json(HERE / "first_pass.json", orient="records", indent=1, default_handler=str)
     with pd.ExcelWriter(HERE / "first_pass.xlsx") as xw:
         df.to_excel(xw, "Coverage & scores", index=False)
@@ -217,7 +231,8 @@ def main():
         df.sort_values("eps_next_fy_rev_90d_pct", ascending=False).head(20).to_excel(
             xw, "Lens - revision momentum", index=False)
         pd.DataFrame([{"component": k, "weight": v,
-                       "status": "computed" if k in AVAILABLE else "PENDING"} for k, v in WEIGHTS.items()]
+                       "status": ("computed" if k in ("magnitude", "technical")
+                                  else f"{len(comm)}/{len(df)} scored" if k == "commentary" else "PENDING")} for k, v in WEIGHTS.items()]
                      ).to_excel(xw, "Rubric", index=False)
     print(f"{len(df)} names | stamp {stamp}")
     print(df["technical_state"].value_counts().to_string())
