@@ -21,16 +21,17 @@ that quote subscriber research stay local and git-ignored.
   | Jev P(E) | 30% | Pending |
   | Operating-earnings magnitude | 25% | Proxy computed |
   | Technical transition | 20% | Computed |
-  | Reporting-commentary progression | 15% | Pending |
+  | Reporting-commentary progression | 15% | Computed for all 83 (12 Oct baseline) |
   | Jev P(G) | 10% | Pending |
 
 ## Coverage funnel (phase 1)
 - **Agreed universe:** 83 companies.
 - **Data fetched:** 83, with no errors.
-- **Technicals:** 83.
+- **Technicals:** 82. ET is unavailable because Yahoo has only 9 days of price history; it stays
+  unavailable rather than being scored 0.
 - **Magnitude proxy:** 83.
 - **90-day revisions:** 81. BIPC and VISN have only 1 analyst.
-- **Commentary progression:** 0, pending phase 2.
+- **Commentary progression:** 83 (12 Oct baseline, before Q3 reports).
 - **Jev assessments:** 0. Jev is not connected, so these are not simulated.
 
 ## Components
@@ -68,6 +69,29 @@ that quote subscriber research stay local and git-ignored.
   - Next report date
 - **Frozen consensus:** revenue estimates for the current quarter, next quarter and next two fiscal
   years, as of 2026-10-12 13:08 UTC. This is the baseline for G. It is stored locally.
+
+- **Commentary progression (phase 2):** six AI research agents applied one identical written brief to
+  every company.
+  - **Inputs:** the exposed product line; the four most recent reporting checkpoints (cadence
+    respected); counterevidence.
+  - **Ladder:** 1 opportunity, 2 named product, 3 design win, 4 order/backlog, 5 production,
+    6 delivery, 7 recognized revenue, 8 recurring profit.
+  - **Score anchors:**
+
+    | Score | Meaning |
+    |---|---|
+    | 90 | Stage 6–8 with acceleration |
+    | 75 | Recently advanced a stage |
+    | 60 | Steady at stage 4–5 |
+    | 45 | Early, stage 2–3 |
+    | 30 | Vague, or no exposure |
+    | 15 | Reversal |
+
+  - Each score carries an evidence-quality rating and sources.
+  - Results were checked for one row per company, the exact column set and no blanks, and four claims
+    were spot-checked against independent primary sources.
+  - Known limitation: scores cluster at 80–90, so treat that range as one band.
+  - A post-earnings re-score is scheduled against this archived baseline.
 
 ## Missing values
 Pending components are never filled with 0 or 50, and the remaining weights are never silently
