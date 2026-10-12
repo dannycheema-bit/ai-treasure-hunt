@@ -40,3 +40,9 @@ experiments/*/transcript.txt
 experiments/*/*.csv
 !experiments/*/STACK.csv
 !experiments/*/PORTFOLIO.csv
+
+# AI Macro Nexus research: Visser/22V subscriber data and fetched market data stay local.
+# Only code and the content-free methodology are tracked; outputs quote subscriber research.
+experiments/ai_nexus_lagging_inflection/*
+!experiments/ai_nexus_lagging_inflection/*.py
+!experiments/ai_nexus_lagging_inflection/METHODOLOGY.md
