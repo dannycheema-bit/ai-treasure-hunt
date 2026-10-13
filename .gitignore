@@ -46,3 +46,8 @@ experiments/*/*.csv
 experiments/ai_nexus_lagging_inflection/*
 !experiments/ai_nexus_lagging_inflection/*.py
 !experiments/ai_nexus_lagging_inflection/METHODOLOGY.md
+
+# Crypto usage/Jev exploratory outputs stay local; only code and method are tracked.
+experiments/visser_crypto_verticals/jev_usage/*
+!experiments/visser_crypto_verticals/jev_usage/*.py
+!experiments/visser_crypto_verticals/jev_usage/METHOD.md
