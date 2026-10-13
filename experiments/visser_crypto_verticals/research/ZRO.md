@@ -1,4 +1,4 @@
-# LayerZero (ZRO) — research note
+# LayerZero (ZRO) — research note (updated 2026-10-13 with independent view)
 
 Compiled 2026-10-11 from public sources (listed at the end). Educational notes only; not investment
 advice. This note is OUTSIDE the pre-registered test: it does not change the frozen list, rules or
@@ -78,7 +78,98 @@ The gap between market cap and fully diluted value is the supply still to be rel
 - Who are the first ATLAS venues, and what volume would cover one monthly unlock with burns?
 - How many apps still run with a single DVN?
 
+---
+
+# Study-first update and independent view (2026-10-13)
+
+## Measure what actually happens on-chain (DefiLlama, to 13 Oct 2026)
+| Window | Messaging fees | Holder revenue (buybacks) |
+|---|---|---|
+| Last 90 days | $0.62m | $0.32m |
+| Prior 90 days | $0.51m (+22%) | $0.48m |
+| Same 90 days a year ago | $1.53m (**−59% y/y**) | n/a |
+| Last 365 days | $2.13m | $3.39m |
+
+- Value held in LayerZero contracts (TVL) is about $11.1bn. Even so, **fee usage is well below a year ago.**
+  The recent quarter's +22% is a rebound from a low base.
+- Fees are small partly by design: the protocol fee switch is off, so most messaging costs go to the
+  verifier networks and executors, not to ZRO holders. That makes them a lower bound on activity.
+- **Migrations after the Kelp hack:**
+  - **Kelp** (rsETH) is moving to Chainlink CCIP.
+  - **Solv** is migrating more than $700m of tokenized-bitcoin infrastructure away from LayerZero.
+  - At the time of the hack, 47% of about 2,665 active LayerZero apps ran a single verifier (CoinGecko/Dune).
+  - LayerZero admitted it "made a mistake", now refuses to sign single-verifier setups, and has added the
+    Blockaid security integration (8 Oct).
+
+## Follow the token: supply versus demand
+| Flow | Size |
+|---|---|
+| Next monthly unlock, **20 Oct 2026** | ~23.6–25.7m ZRO (sources differ), about $48–53m at $2.05, ~6% of circulating supply |
+| Remaining unlocks | about 8 monthly releases to **May 2027** |
+| Cumulative buybacks to date (Stargate revenue) | ~2.54m ZRO, ~$5.4m |
+| ATLAS burn (75% of post-rebate fees) | not yet producing measured flow |
+
+**What consensus skips:**
+- **A single monthly unlock is about 9–10× all buybacks ever made.**
+- **To offset unlocks** with ATLAS burns alone, ATLAS would need about $65–70m a month of post-rebate fees,
+  similar to **Hyperliquid's entire fee base** (about $76m a month on DefiLlama). That is a very high bar for
+  a product that has not yet shown live volume.
+- **The supply window is finite.** It ends in about May 2027, much sooner than Chainlink's roughly
+  three-year tail. After that, any real burn would act on a fixed supply.
+
+## Valuation, roughly
+- Market cap about $0.82bn; fully diluted about $2.05bn; price $2.05.
+- **Up about 100% in 30 days.** It was flat over a year, after an all-time low on 31 Jul 2026.
+- Market cap / annual messaging fees ≈ **385×**; fully diluted value / fees ≈ 960×.
+- Today the price is almost entirely **optionality on ATLAS, Zero and the fee switch**, not current cash
+  flow.
+
+## Independent view (formed before reading price targets)
+- **The rally is a narrative rerating, not a usage rerating.** Fees are down 59% y/y, the fee switch is off,
+  buybacks are tiny, and a migration plus a lawsuit hang over the brand. Commentary attributes the latest
+  leg up to a technical breakout and speculative flows.
+- **The near term is supply-heavy.** About $50m of new ZRO arrives every month until May 2027 into a
+  market that has just doubled the price. The 20 Oct unlock is a live test of how much of the rally is real
+  demand.
+- **The medium-term asymmetry is genuine but conditional.** If Zero and ATLAS reach real institutional
+  volume **after the unlocks end**, token economics flip from dilution to burn on a fixed supply. Of the
+  names studied so far, ZRO has the clearest path for that flip. Chainlink's supply tail is longer, but its
+  usage is real today.
+- **Consensus split:**
+  - Bulls price the ATLAS/Zero endgame as if it were already happening.
+  - Bears price the hack, migrations and lawsuit as permanent.
+  - The data supports neither yet.
+- **The variable that decides it:** measured ATLAS/Zero fee burn per month against the remaining unlock
+  supply, plus whether the December fee-switch vote reaches quorum.
+
+## Measurable tests (set now)
+**Would strengthen the case:**
+- The 20 Oct unlock is absorbed. Watch exchange inflows from the recipient wallets and whether the price
+  holds above the pre-unlock level a week later; this is a market-reaction signal, not proof.
+- ATLAS goes live with named venues and a public burn counter showing at least $5m a month of burns within
+  three months of launch.
+- Zero mainnet launches with named institutional participants.
+- The December fee-switch vote **reaches quorum and passes.**
+- Messaging fees get back above the year-ago level (90-day fees above $1.5m).
+- No further major migrations.
+
+**Would weaken the case:**
+- ATLAS or Zero slip into 2027 without volume.
+- The fee-switch vote fails quorum again (it would be the fifth attempt).
+- Further protocol migrations to CCIP or others.
+- Adverse developments in the KelpDAO lawsuit.
+- The price falls back toward the pre-rally level after unlocks.
+
+**Cross-check with Jev (13 Oct):** P(fees +25% by Mar-2027) = 0.25 and P(holders capture fees) = 0.46.
+That view is moderate: more constructive on usage than Chainlink (0.16) but well short of the narrative.
+
 ## Sources
+- DefiLlama, LayerZero fees and holder revenue: https://defillama.com/protocol/layerzero
+- CoinDesk, LayerZero says it "made a mistake" (2026-05-09): https://www.coindesk.com/tech/2026/05/09/layerzero-says-it-made-a-mistake-in-usd292-million-kelp-exploit
+- The Block, Kelp moves to Chainlink (2026-05-05): https://www.theblock.co/news/ecosystems/2026-05-05-kelp-dao-ditches-layerzero-chainlink-cross-chain-infrastructure-292-million-exploit-400131
+- MEXC News, 47% of OApps on a single DVN: https://www.mexc.com/news/1051837
+- CryptoTimes, ZRO +16% on 12 Oct: https://www.cryptotimes.io/2026/10/12/layerzero-zro-price-jumps-16-as-traders-assess-2-50-resistance/
+- ETHNews, price vs unlock: https://ethnews.com/layerzero-price-retests-its-february-ceiling-before-unlock
 - The Block — ATLAS / Zero (2026-08-25): https://www.theblock.co/news/ecosystems/2026-08-25-zro-token-layerzero-atlas-exchange-infrastructure-zero-blockchain-412736
 - The Block — KelpDAO lawsuit (2026-09-25): https://theblock.co/news/regulation/2026-09-25-kelpdao-sues-layerzero-claims-it-endorsed-setup-used-in-292-million-rseth-exploit-416361
 - The Block — LayerZero on Lazarus / single-point setup: https://www.theblock.co/post/398028/layerzero-kelp-dao-lazarus
