@@ -19,7 +19,16 @@ import pandas as pd
 HERE = Path(__file__).parent
 RAW = HERE / "raw"
 WEIGHTS = {"jev_pe": 30, "magnitude": 25, "technical": 20, "commentary": 15, "jev_pg": 10}
-AVAILABLE = ("magnitude", "technical", "commentary")
+AVAILABLE = ("jev_pe", "magnitude", "technical", "commentary", "jev_pg")
+NON_JEV = ("magnitude", "technical", "commentary")
+
+
+def jev_scores():
+    """Actual Jev outputs from jev_run.py (jev_scores.csv). Missing values stay missing."""
+    path = HERE / "jev_scores.csv"
+    if not path.exists():
+        return {}
+    return {r.ticker: r for r in pd.read_csv(path).itertuples()}
 FROZEN = HERE / "frozen_consensus_2026-10-12.json"
 
 
@@ -178,9 +187,24 @@ def frozen_consensus(rec):
             for p in r.index}
 
 
+def jev_fields(j):
+    if j is None:
+        return {"jev_pe_score": None, "jev_pg_score": None, "jev_status": "PENDING (not assessed)"}
+    pe = None if pd.isna(j.P_E) else float(j.P_E)
+    pg = None if pd.isna(j.P_G) else float(j.P_G)
+    return {"jev_pe_score": None if pe is None else round(100 * pe, 1),
+            "jev_pg_score": None if pg is None else round(100 * pg, 1),
+            "jev_status": f"assessed ({j.returned_model})",
+            "P_E": pe, "P_G": pg, "P_early_given_E": j.P_early_given_E, "P_early": j.P_early,
+            "P_E_adverse": j.P_E_adverse, "P_E_base": j.P_E_base, "P_E_favourable": j.P_E_favourable,
+            "jev_commercial_progression_0_3": j.commercial_progression_0_3,
+            "jev_evidence_quality_0_2": j.evidence_quality_0_2}
+
+
 def main():
     rows, frozen = [], {}
     comm = commentary_scores()
+    jev = jev_scores()
     for path in sorted(RAW.glob("*.json")):
         rec = json.loads(path.read_text())
         u = rec["universe"]
@@ -195,7 +219,7 @@ def main():
                                           "slope50_prev_pct", "slope200_pct", "ret_1m", "ret_3m",
                                           "from_52w_high", "last_date")},
                **momentum(rec), **reported(rec),
-               "jev_pe": "PENDING (Jev not connected)", "jev_pg": "PENDING (Jev not connected)",
+               **jev_fields(jev.get(u["Ticker"])),
                "commentary_score": (float(comm[u["Ticker"]].commentary_score) if u["Ticker"] in comm else None),
                "commentary_stage": (comm[u["Ticker"]].stage if u["Ticker"] in comm else "PENDING (phase 2 research)")}
         avail = [c for c in AVAILABLE if row[f"{c}_score"] is not None]
@@ -205,7 +229,11 @@ def main():
         row["partial_points"] = round(pts, 1)                    # out of the available weight
         row["attainable_min"] = round(pts, 1)
         row["attainable_max"] = round(pts + missing_w, 1)
-        row["no_jev_partial_pct"] = round(100 * pts / sum(WEIGHTS[c] for c in avail), 1) if avail else None
+        nj = [c for c in NON_JEV if row[f"{c}_score"] is not None]
+        nj_pts = sum(WEIGHTS[c] * row[f"{c}_score"] / 100 for c in nj)
+        row["no_jev_points_of_60"] = round(nj_pts, 1) if len(nj) == len(NON_JEV) else None
+        row["no_jev_pct"] = round(100 * nj_pts / sum(WEIGHTS[c] for c in nj), 1) if nj else None
+        row["total_score"] = round(pts, 1) if len(avail) == len(AVAILABLE) else None
         rows.append(row)
         frozen[u["Ticker"]] = frozen_consensus(rec)
 
@@ -232,7 +260,8 @@ def main():
             xw, "Lens - revision momentum", index=False)
         pd.DataFrame([{"component": k, "weight": v,
                        "status": ("computed" if k in ("magnitude", "technical")
-                                  else f"{len(comm)}/{len(df)} scored" if k == "commentary" else "PENDING")} for k, v in WEIGHTS.items()]
+                                  else f"{len(comm)}/{len(df)} scored" if k == "commentary"
+                                  else f"{len(jev)}/{len(df)} assessed by Jev" if jev else "PENDING")} for k, v in WEIGHTS.items()]
                      ).to_excel(xw, "Rubric", index=False)
     print(f"{len(df)} names | stamp {stamp}")
     print(df["technical_state"].value_counts().to_string())

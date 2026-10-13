@@ -18,11 +18,11 @@ that quote subscriber research stay local and git-ignored.
 
   | Component | Weight | Phase-1 status |
   |---|---|---|
-  | Jev P(E) | 30% | Pending |
+  | Jev P(E) | 30% | Jev outputs for all 83 |
   | Operating-earnings magnitude | 25% | Proxy computed |
   | Technical transition | 20% | Computed |
   | Reporting-commentary progression | 15% | Computed for all 83 (12 Oct baseline) |
-  | Jev P(G) | 10% | Pending |
+  | Jev P(G) | 10% | Jev outputs for all 83 |
 
 ## Coverage funnel (phase 1)
 - **Agreed universe:** 83 companies.
@@ -32,7 +32,7 @@ that quote subscriber research stay local and git-ignored.
 - **Magnitude proxy:** 83.
 - **90-day revisions:** 81. BIPC and VISN have only 1 analyst.
 - **Commentary progression:** 83 (12 Oct baseline, before Q3 reports).
-- **Jev assessments:** 0. Jev is not connected, so these are not simulated.
+- **Jev assessments:** 83 (13 Oct 2026). ET has no technical score, so 82 names have a complete total.
 
 ## Components
 - **Technical transition:** computed from about 2 years of daily adjusted closes.
@@ -92,6 +92,38 @@ that quote subscriber research stay local and git-ignored.
     were spot-checked against independent primary sources.
   - Known limitation: scores cluster at 80–90, so treat that range as one band.
   - A post-earnings re-score is scheduled against this archived baseline.
+
+## Jev (TypeSafe), added 13 Oct 2026
+- **Access:** TypeSafe's official HTTP API (`POST /v1/systemone`), through `jev_client.py`, which uses only
+  the Python standard library. The key is read from `TYPESAFE_API_KEY` or the git-ignored `.env`, and is
+  never logged.
+- **Model:** requested `jev-latest`; returned `jev-1.13.0`.
+- **Preflight (`jev_preflight.py`):**
+  - TypeSafe's neutral documentation example gave the documented answer.
+  - A sensitivity test moved P(E) from 0.07 (adverse evidence) to 0.52 (actual) to 0.68 (favourable).
+  - A repeated request was stable, and a factual control question behaved correctly.
+- **Run (`jev_run.py`):** one identical schema for every company.
+
+  | Request | Questions |
+  |---|---|
+  | Central | E (Noul), G (Noul, against the 12 Oct frozen revenue consensus), early-given-E (Noul), commercial progression (Score 0–3), evidence quality (Score 0–2) |
+  | Adverse, base and favourable | E and G, each under an explicit, neutral scenario premise |
+
+  - **State sent:** public evidence only. No subscriber text and no price or chart data, to avoid circular
+    reasoning.
+  - Every request is cached by a hash of state, questions and model, and logged locally.
+  - **Usage:** 332 requests, about 398k input tokens.
+- **Scoring:** jev_pe = 100 × P(E); jev_pg = 100 × P(G). P(early) = P(E) × P(early | E). Jev outputs are never
+  rescaled or stretched.
+- **Sensitivity:**
+  - The no-Jev ranking on the same 82-name cohort has rank correlation 0.92 with the default.
+  - Overlap with the default top ten: 7/10 for no-Jev, 9/10 for Jev-heavy weights, 6/10 for
+    fundamentals-only, 7/10 for chart-heavy.
+  - Jev P(E) correlates 0.80 with the commentary score, because both read the same evidence; they are not
+    independent votes.
+- **Interpretation:** a Noul is documented as the probability of yes. Jev's answers on future events are
+  cautious (mostly 0.2–0.8), and they are not calibrated for corporate earnings until checked against
+  reported results.
 
 ## Missing values
 Pending components are never filled with 0 or 50, and the remaining weights are never silently

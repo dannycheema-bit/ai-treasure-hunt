@@ -61,11 +61,17 @@ def components_table(r):
     rows = [["Component (weight)", "Score", "Status"]]
     def add(name, w, val, status):
         rows.append([name + f" ({w}%)", "" if val is None else f"{val:.0f}", status])
-    add("Jev P(E) earnings step-up", 30, None, "PENDING - Jev not connected")
+    pe, pg = getattr(r, "jev_pe_score", None), getattr(r, "jev_pg_score", None)
+    pe = None if pe is None or pd.isna(pe) else float(pe)
+    pg = None if pg is None or pd.isna(pg) else float(pg)
+    add("Jev P(E) earnings step-up", 30, pe,
+        "PENDING - not assessed" if pe is None else
+        f"P(E) {pe / 100:.2f}; early|E {r.P_early_given_E:.2f}; adverse/base/fav {r.P_E_adverse:.2f}/{r.P_E_base:.2f}/{r.P_E_favourable:.2f}")
     add("Operating-earnings magnitude (proxy)", 25, r.magnitude_score, "Consensus next-FY EPS growth")
     add("Technical transition", 20, r.technical_score, str(r.technical_state))
     add("Reporting-commentary progression", 15, r.commentary_score, f"Ladder stage {r.commentary_stage} of 8")
-    add("Jev P(G) expectations asymmetry", 10, None, "PENDING - Jev not connected")
+    add("Jev P(G) expectations asymmetry", 10, pg,
+        "PENDING - not assessed" if pg is None else f"P(G) {pg / 100:.2f}: revenue >=5% above frozen consensus x2")
     t = Table(rows, colWidths=[70 * mm, 16 * mm, 92 * mm])
     style = [("FONT", (0, 0), (-1, -1), "Helvetica", 8), ("FONT", (0, 0), (-1, 0), "Helvetica-Bold", 8),
              ("TEXTCOLOR", (0, 0), (-1, 0), MUTED), ("LINEBELOW", (0, 0), (-1, 0), 0.6, RULE),
@@ -98,9 +104,9 @@ def card(r, c, frozen, raw, total):
     flags = r.data_quality_flags or "none"
     story = [
         P(f"{escape(r.company)} <font size=11 color='#5b6474'>&nbsp;{escape(r.ticker)}</font>", "title"),
-        P(f"{escape(r.theme)} &nbsp;|&nbsp; Partial rank {r.partial_rank} of {total} &nbsp;|&nbsp; "
-          f"<b>{r.partial_points:.1f}</b> of 60 available points &nbsp;|&nbsp; attainable range "
-          f"{r.partial_points:.1f}-{r.attainable_max:.1f} of 100 once Jev is added &nbsp;|&nbsp; evidence quality: "
+        P(f"{escape(r.theme)} &nbsp;|&nbsp; Rank {r.partial_rank} of {total} &nbsp;|&nbsp; "
+          f"<b>{r.partial_points:.1f}</b> of {100 - (r.attainable_max - r.attainable_min):.0f} available points "
+          f"(no-Jev: {r.no_jev_points_of_60} of 60) &nbsp;|&nbsp; evidence quality: "
           f"{escape(str(c.evidence_quality))}", "sub"),
         Spacer(1, 5), components_table(r),
         P("Thesis link: exposed product / revenue line", "h"), P(escape(str(c.exposed_line))),
@@ -139,18 +145,18 @@ def card(r, c, frozen, raw, total):
     srcs = [s.strip() for s in str(c.sources).split("|") if s.strip()][:4]
     story += [P("Sources", "h")] + [P(f"<link href='{escape(s)}' color='#2456a6'>{escape(s[:120])}</link>", "small") for s in srcs]
     story += [Spacer(1, 4), P("AI-assisted research from a user-defined prompt; scores are ordinal rubric points, not "
-                             "expected returns; Jev components pending and not estimated. Not investment advice. "
+                             "expected returns; Jev outputs are subjective and uncalibrated. Not investment advice. "
                              "Local use only - contains material derived from subscriber research.", "small")]
     return KeepInFrame(180 * mm, 270 * mm, story, mode="shrink")
 
 
 def cover(top, total):
-    rows = [["#", "Company", "Ticker", "Theme", "Pts /60", "Commentary", "Chart", "Next report"]]
+    rows = [["#", "Company", "Ticker", "Theme", "Score /100", "Jev P(E)", "Chart", "Next report"]]
     for r in top.itertuples():
         rows.append([r.partial_rank, P(escape(r.company), "cell"), r.ticker, P(escape(r.theme), "cell"),
-                     f"{r.partial_points:.1f}", f"{r.commentary_score:.0f}", P(escape(str(r.technical_state)), "cell"),
+                     f"{r.partial_points:.1f}", f"{r.P_E:.2f}" if pd.notna(getattr(r, "P_E", None)) else "n/a", P(escape(str(r.technical_state)), "cell"),
                      r.next_report or "n/a"])
-    t = Table(rows, colWidths=[8 * mm, 30 * mm, 17 * mm, 30 * mm, 15 * mm, 22 * mm, 34 * mm, 22 * mm], repeatRows=1)
+    t = Table(rows, colWidths=[8 * mm, 30 * mm, 16 * mm, 30 * mm, 19 * mm, 17 * mm, 36 * mm, 22 * mm], repeatRows=1)
     t.setStyle(TableStyle([("FONT", (0, 0), (-1, -1), "Helvetica", 8), ("FONT", (0, 0), (-1, 0), "Helvetica-Bold", 8),
                            ("TEXTCOLOR", (0, 0), (-1, 0), MUTED), ("LINEBELOW", (0, 0), (-1, -1), 0.3, RULE),
                            ("VALIGN", (0, 0), (-1, -1), "MIDDLE")]))
@@ -160,10 +166,12 @@ def cover(top, total):
           "themes &nbsp;|&nbsp; pre-Q3-earnings baseline", "sub"),
         Spacer(1, 8), t, Spacer(1, 10),
         P("How to read these cards", "h"),
-        P("Ranking uses 60 of the 100 rubric points currently available (magnitude 25, technical 20, commentary 15). "
-          "Jev P(E) 30 and P(G) 10 are pending because Jev is not connected; they have not been estimated or "
-          "reweighted. Every name could still move by up to 40 points, so small gaps are ties - read this as a tier, "
-          "not a precise order. Commentary scores cluster at 80-90; treat that band as one level."),
+        P("Scores use the full default rubric: Jev P(E) 30, magnitude 25, technical 20, commentary 15, Jev P(G) 10 "
+          "(Jev = TypeSafe jev-1.13.0, actual model outputs, 13 Oct 2026). Gaps of a few points are ties - read the "
+          "list as a tier, not a precise order. Jev P(E) is correlated with the commentary score (it reads the same "
+          "evidence), so the two are not independent votes. Jev answers are cautious on future events (most fall "
+          "between 0.2 and 0.8); they are subjective and uncalibrated for earnings forecasting until validated "
+          "against reported results."),
     ] + cover_notes()
 
 
@@ -198,8 +206,14 @@ def disclosures():
           "user's Fundamentals file disagreed by more than 15 points on EPS growth, the more conservative figure was "
           "used and flagged."),
         P("Jev", "h"),
-        P("Jev (TypeSafe) is not connected in this environment. Its P(E) and P(G) components - 40% of the default "
-          "rubric - are pending. No Claude judgment has been substituted or labelled as a Jev probability."),
+        P("TypeSafe Jev via the official HTTP API (requested jev-latest, returned jev-1.13.0), 13 Oct 2026. Preflight: "
+          "neutral documentation example matched; sensitivity test moved P(E) from 0.07 (adverse evidence) to 0.52 "
+          "(actual) to 0.68 (favourable); repeat stable. Per company: one central request (E, G, timing, commercial "
+          "progression, evidence quality) and three scenario requests (adverse/base/favourable premises) - 332 "
+          "requests, about 398k input tokens. State sent: public evidence only (no subscriber text, no price/chart "
+          "data). Noul outputs are documented as the probability of yes; they are not calibrated for corporate "
+          "earnings. No Claude judgment was substituted for Jev. A no-Jev ranking on the same 82-name cohort has "
+          "rank correlation 0.92 with the default; 7 of the default top ten are also in the no-Jev top ten."),
         P("Limitations", "h"),
         P("Review was performed by AI, not human analysts. Scores are ordinal rubric points with correlated inputs, "
           "not expected returns. Any probabilities, when added, will be subjective and uncalibrated unless validated. "
