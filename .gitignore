@@ -51,3 +51,7 @@ experiments/ai_nexus_lagging_inflection/*
 experiments/visser_crypto_verticals/jev_usage/*
 !experiments/visser_crypto_verticals/jev_usage/*.py
 !experiments/visser_crypto_verticals/jev_usage/METHOD.md
+
+# 22V subscriber papers and notes derived from them stay local.
+experiments/visser_ai_bubble/*.pdf
+experiments/visser_ai_bubble/PAPER_NOTES*.md
