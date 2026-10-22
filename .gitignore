@@ -55,3 +55,8 @@ experiments/visser_crypto_verticals/jev_usage/*
 # 22V subscriber papers and notes derived from them stay local.
 experiments/visser_ai_bubble/*.pdf
 experiments/visser_ai_bubble/PAPER_NOTES*.md
+
+# Beat-vs-price test outputs stay local (derived from subscriber universe + market data).
+experiments/beat_vs_price_q3_2026/*
+!experiments/beat_vs_price_q3_2026/*.py
+!experiments/beat_vs_price_q3_2026/PREREGISTRATION.md
