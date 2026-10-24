@@ -60,3 +60,7 @@ experiments/visser_ai_bubble/PAPER_NOTES*.md
 experiments/beat_vs_price_q3_2026/*
 !experiments/beat_vs_price_q3_2026/*.py
 !experiments/beat_vs_price_q3_2026/PREREGISTRATION.md
+
+# 22V crypto-vertical decks and notes derived from them stay local.
+experiments/visser_crypto_verticals/*.pdf
+experiments/visser_crypto_verticals/DECK_NOTES*.md
