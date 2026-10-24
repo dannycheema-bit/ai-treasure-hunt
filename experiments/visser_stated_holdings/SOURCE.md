@@ -4,6 +4,19 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-10-16: Galaxy podcast "Bitcoin and AI with Jordi Visser" (1:20:23)
+https://youtu.be/G-HqvP7pjVk. Recorded on a Wednesday afternoon ("3:15 p.m. Eastern", Nasdaq −2.14%),
+probably 14 Oct.
+- **BTC:** "the most asymmetric bet I've ever made in my life, which is Bitcoin … my ultimate asymmetric
+  bet and so I have a lot of money on that bet" (0:31:04–0:31:31). The bet is framed as long-term (fiat
+  assets versus Bitcoin), not a 2–3 year view.
+- No other current positions were stated.
+- Historical only (not current): in 2008 he was long commodities and EM and short US banks and the
+  consumer; he closed a book of more than $1bn in May 2008 and bought coal puts (0:31:35–0:33:25).
+- Also discussed: an upcoming paper on "shorting friction" (bank net interest margin as crypto's
+  opportunity); the BTC "silent IPO" (OG whales distributing, as in 2000–04 tech); tokenization
+  turning illiquid wealth into M2/M3.
+
 ## 2026-10-18: "When Shift Happens" podcast clip
 "Jordi Visser: Nobody Is Ready for How Big Bitcoin Gets…", 6:09, https://youtu.be/hKGTOf9ajOs
 
