@@ -4,6 +4,13 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-10-23: Weekly video (his channel), see ../visser_weekly_2026-10-23/SOURCE.md
+- **BTC:** "I've listened to Adam Back before I put money into this. So, I'm talking my book" (48:50–48:54).
+- **His 46-name tokenized index:** he is working with a group to make it tradable. **"I'm going to put money
+  into it"** (44:13–44:18). This is an intention, not a current holding.
+- He says healthcare (pharma, biotech, life sciences) "needs to be part of your portfolio". That is a
+  recommendation, not a stated holding.
+
 ## 2026-10-16: Galaxy podcast "Bitcoin and AI with Jordi Visser" (1:20:23)
 https://youtu.be/G-HqvP7pjVk. Recorded on a Wednesday afternoon ("3:15 p.m. Eastern", Nasdaq −2.14%),
 probably 14 Oct.
