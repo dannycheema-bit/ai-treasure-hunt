@@ -65,3 +65,5 @@ experiments/beat_vs_price_q3_2026/*
 experiments/visser_crypto_verticals/*.pdf
 experiments/visser_crypto_verticals/DECK_NOTES*.md
 experiments/visser_stated_holdings/transcript*.txt
+experiments/visser_weekly_*/*.pdf
+experiments/visser_weekly_*/PAPER_NOTES*.md
