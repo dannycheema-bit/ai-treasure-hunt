@@ -4,6 +4,11 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-10-26: "vertical 4" crypto video (his channel), see ../visser_vertical4_2026-10-26/SOURCE.md
+- **"For me though I'm investing for the most part in the entire space"** (09:29–09:34): he invests broadly
+  across the crypto tokenized-index universe, not name by name. This is consistent with 2 Oct ("some of the
+  names") and 23 Oct (plans to put money into a tradable version of the index).
+
 ## 2026-10-25: "tech analysis video" (his channel), see ../visser_tech_2026-10-25/SOURCE.md
 - **Bought "an optical name last week"** (week of 19–23 Oct), "really the first name that I've bought" (06:55).
   Name not given.
