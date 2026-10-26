@@ -4,6 +4,17 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-10-25: "tech analysis video" (his channel), see ../visser_tech_2026-10-25/SOURCE.md
+- **Bought "an optical name last week"** (week of 19–23 Oct), "really the first name that I've bought" (06:55).
+  Name not given.
+- **NVDA:** bought "some" in **September** ("playing for a breakout") and "moving some more money into that"
+  (06:59–07:06).
+- **MU:** "some Micron back in July" (07:08).
+- "Mainly focused on crypto" otherwise (07:10).
+- **Conflict:** the 18 Oct "When Shift Happens" clip (date of recording unclear) said he "rotated out of most
+  of my memory stocks and into silver". Either the Micron position was trimmed after July, or the clip
+  predates or postdates it. Unresolved.
+
 ## 2026-10-23: Weekly video (his channel), see ../visser_weekly_2026-10-23/SOURCE.md
 - **BTC:** "I've listened to Adam Back before I put money into this. So, I'm talking my book" (48:50–48:54).
 - **His 46-name tokenized index:** he is working with a group to make it tradable. **"I'm going to put money
