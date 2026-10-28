@@ -13,6 +13,7 @@ BASKETS = {
     "Visser 46-name test": EXP / "visser_crypto_verticals",
     "Danny's Crypto Portfolio v1": EXP / "dannys_crypto_portfolio_v1",
     "Danny's Crypto Portfolio v2": EXP / "dannys_crypto_portfolio_v2",
+    "Danny's Crypto Portfolio v3": EXP / "dannys_crypto_portfolio_v3",
 }
 
 
