@@ -4,6 +4,21 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-10-31: Weekly video (his channel), see ../visser_weekly_2026-10-31/SOURCE.md
+**The most detailed disclosure so far.**
+- **Marvell (MRVL):** held, "crushed this week" (−20%+); not reduced; may reduce if a rumoured Lumentum
+  deal happens.
+- **Optical names:** added "this week" in three tranches into the bounce (not Marvell); names not given.
+- **Micron (MU):** sold from about Mar/Apr 2026 (proceeds went mostly to **silver and crypto**), then
+  **rebuilt to "a decent-sized position" in the week of 26–30 Oct**.
+- **NVDA:** "added at times … in small amounts".
+- **Silver:** held ("part of my portfolio").
+- **EWZ:** held as "retirement type money".
+- **Long BTC / short NDX:** "my favorite trade and the way that I am also playing this".
+- **Will not own Anthropic** at IPO.
+- **This resolves the 18 Oct conflict:** the "rotated out of most of my memory stocks and into silver"
+  statement matches the Mar/Apr–Oct period; Micron was rebuilt in late Oct.
+
 ## 2026-10-26: "vertical 4" crypto video (his channel), see ../visser_vertical4_2026-10-26/SOURCE.md
 - **"For me though I'm investing for the most part in the entire space"** (09:29–09:34): he invests broadly
   across the crypto tokenized-index universe, not name by name. This is consistent with 2 Oct ("some of the
