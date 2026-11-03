@@ -14,6 +14,7 @@ BASKETS = {
     "Danny's Crypto Portfolio v1": EXP / "dannys_crypto_portfolio_v1",
     "Danny's Crypto Portfolio v2": EXP / "dannys_crypto_portfolio_v2",
     "Danny's Crypto Portfolio v3": EXP / "dannys_crypto_portfolio_v3",
+    "Danny's Crypto Portfolio v4": EXP / "dannys_crypto_portfolio_v4",
 }
 
 

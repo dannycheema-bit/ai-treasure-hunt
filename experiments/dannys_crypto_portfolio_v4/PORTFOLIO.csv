@@ -1,0 +1,18 @@
+symbol,name,type,price_source_id,in_visser_46,visser_vertical,weight
+BTC,Bitcoin,token,bitcoin,yes,Digital Monetary Assets,5.88%
+SOL,Solana,token,solana,yes,Settlement & Smart Contract Rails,5.88%
+ETH,Ethereum,token,ethereum,yes,Settlement & Smart Contract Rails,5.88%
+HOOD,Robinhood,stock,HOOD,yes,"Exchange, Brokerage & Market Structure",5.88%
+TAO,Bittensor,token,bittensor,yes,AI Agents & Machine Economy,5.88%
+VVV,Venice Token,token,venice-token,yes,AI Agents & Machine Economy,5.88%
+UNI,Uniswap,token,uniswap,yes,"Exchange, Brokerage & Market Structure",5.88%
+LINK,Chainlink,token,chainlink,yes,"Oracle, Data & Interop Middleware",5.88%
+ZEC,Zcash,token,zcash,yes,Digital Monetary Assets,5.88%
+HYPE,Hyperliquid,token,hyperliquid,yes,"Exchange, Brokerage & Market Structure",5.88%
+COIN,Coinbase,stock,COIN,yes,"Exchange, Brokerage & Market Structure",5.88%
+NEAR,NEAR Protocol,token,near,yes,Settlement & Smart Contract Rails,5.88%
+SUI,Sui,token,sui,yes,Settlement & Smart Contract Rails,5.88%
+ONDO,Ondo,token,ondo-finance,yes,Tokenization & RWA Rails,5.88%
+ZRO,LayerZero,token,layerzero,yes,"Oracle, Data & Interop Middleware",5.88%
+XRP,XRP,token,ripple,yes,Settlement & Smart Contract Rails,5.88%
+HNT,Helium,token,helium,yes,"DePIN, Storage & Physical Networks",5.88%
