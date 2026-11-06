@@ -4,6 +4,13 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-11-05: "vertical 5" crypto video (his channel), see ../visser_vertical5_2026-11-05/SOURCE.md
+- **BTC:** "buying in this area" (just below ~$80k) and "building a position", plus **call options** (05:42–05:50).
+- **STRC** (Strategy's preferred, ~12%): "I have some stretch in my portfolio" (06:43).
+- **NEAR** and **ZEC:** has "some money" in both (28:12–28:16).
+- **No money yet in the other names** in the Digital Monetary Assets and Staking & Validation verticals; he will
+  invest through the index once it is ready (28:18–28:24). This is consistent with 23 and 26 Oct.
+
 ## 2026-10-31: Weekly video (his channel), see ../visser_weekly_2026-10-31/SOURCE.md
 **The most detailed disclosure so far.**
 - **Marvell (MRVL):** held, "crushed this week" (−20%+); not reduced; may reduce if a rumoured Lumentum
