@@ -4,6 +4,13 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-11-08: Weekly video (his channel), see ../visser_weekly_2026-11-08/SOURCE.md
+- **Micron (MU):** the name he bought most in the week of 2-6 Nov (18:33).
+- **Marvell (MRVL):** bought back after the fall; no longer his largest position (12:53-13:44). A change from holding only.
+- **NVDA:** bought some. MU, MRVL and NVDA are three of a "concentrated 10" (18:45).
+- **Other optical names:** sold some at a loss for tax (13:19-13:31). Names not given.
+- Buying AI weekly since about 27 Oct; this week was the largest (24:07).
+
 ## 2026-11-06: Friday deleveraging video (his channel), see ../visser_friday_2026-11-06/SOURCE.md
 - **AI stocks:** buying "bits and pieces" for about two weeks, including on 5 Nov; some first buys "down 40 50%"
   (01:31-01:46). Not at max position.
