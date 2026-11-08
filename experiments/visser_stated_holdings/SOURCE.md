@@ -4,6 +4,13 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-11-06: Friday deleveraging video (his channel), see ../visser_friday_2026-11-06/SOURCE.md
+- **AI stocks:** buying "bits and pieces" for about two weeks, including on 5 Nov; some first buys "down 40 50%"
+  (01:31-01:46). Not at max position.
+- **Opticals:** the main area he has bought, citing Vera Rubin (10:02-10:19). Names not given.
+- **NVDA and MU:** small buys in July (10:02). Consistent with 25 Oct.
+- Sold losing positions for tax purposes on 5 Nov, then rebought (19:37).
+
 ## 2026-11-05: "vertical 5" crypto video (his channel), see ../visser_vertical5_2026-11-05/SOURCE.md
 - **BTC:** "buying in this area" (just below ~$80k) and "building a position", plus **call options** (05:42–05:50).
 - **STRC** (Strategy's preferred, ~12%): "I have some stretch in my portfolio" (06:43).
