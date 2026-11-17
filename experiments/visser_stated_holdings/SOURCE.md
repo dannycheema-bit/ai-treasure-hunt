@@ -4,6 +4,10 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-11-17: Tuesday update (his channel), see ../visser_tuesday_2026-11-17/SOURCE.md
+- **No long trading positions** while QQQ is below its 200-day (04:07-04:17).
+- Still holds the long-term AI names he expects to "at least double" in a year (04:27-04:36). Names not given.
+
 ## 2026-11-08: Weekly video (his channel), see ../visser_weekly_2026-11-08/SOURCE.md
 - **Micron (MU):** the name he bought most in the week of 2-6 Nov (18:33).
 - **Marvell (MRVL):** bought back after the fall; no longer his largest position (12:53-13:44). A change from holding only.
