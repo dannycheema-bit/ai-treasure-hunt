@@ -4,6 +4,11 @@ This is a log of what Visser has **said** about his own positions in public vide
 portfolio: there is no regulatory filing, and his indices are research universes, not holdings. Each entry
 is dated by the date the source was **posted**, which may be later than the date it was recorded.
 
+## 2026-11-23: "Candlestick Reversal Patterns" (his channel), see ../visser_candlestick_2026-11-23/SOURCE.md
+- **Trading small long positions** on a possible bottom (~01:40, ~07:50). Names not given. QQQ still below its 200-day,
+  against his 17 Nov rule (which allowed buying on panic days).
+- Would add "a lot" on a Zweig breadth thrust; may move money from money market funds into stocks.
+
 ## 2026-11-17: Tuesday update (his channel), see ../visser_tuesday_2026-11-17/SOURCE.md
 - **No long trading positions** while QQQ is below its 200-day (04:07-04:17).
 - Still holds the long-term AI names he expects to "at least double" in a year (04:27-04:36). Names not given.
