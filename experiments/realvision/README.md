@@ -11,6 +11,14 @@ An index of Real Vision videos and interviews, handled the same way as the Visse
   - `PAPER_NOTES*.md`: notes on subscriber-only material (Real Vision Pro, Macro Insiders, Crypto Pro). **Git-ignored.**
 - Subscriber videos, PDFs and decks are kept in `~/Documents/Jev-Research-Pack/4-realvision-research/`, never in the repo.
 
+## Real Vision MCP (free tier)
+- Server `realvision` at `https://mcp.realvision.com/free`, added to Claude Code for this project only (local scope; no
+  login). Tools: GMI macro regime and Macro Seasons, crypto cycle dashboard, market bulletin and movers, headlines,
+  US economic calendar, community attention map, and single-ticker data.
+- Its answers are Real Vision's own published views (GMI = Raoul Pal's Global Macro Investor). Treat them as claims to
+  check, like any other source, and record the `as_of` date each answer carries.
+- `rv_submit_feedback` sends a message to Real Vision: use it only when the user asks.
+
 ## Rules (same as the Visser work)
 - Public YouTube or podcast links: fetch the captions and write `SOURCE.md`. Commit only when asked.
 - Walled content: use the copy the user downloads to `~/Downloads`. Notes stay local.
