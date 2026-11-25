@@ -68,3 +68,10 @@ experiments/visser_stated_holdings/transcript*.txt
 experiments/visser_weekly_*/*.pdf
 experiments/visser_weekly_*/PAPER_NOTES*.md
 analysis/22V Research - *.pdf
+
+# Real Vision: subscriber notes and files stay local (public SOURCE.md files may be committed).
+experiments/realvision_*/PAPER_NOTES*.md
+experiments/realvision_*/*.pdf
+experiments/realvision_*/*.mp4
+experiments/realvision_*/*.pptx
+experiments/realvision_*/*.xlsx
